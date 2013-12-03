@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://service.oid.sade.vm.fi" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OIDService"
+	targetNamespace="http://service.oid.sade.vm.fi" xmlns:types="http://service.oid.sade.vm.fi/types">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://service.oid.sade.vm.fi">
+			<xsd:import namespace="http://service.oid.sade.vm.fi/types"
+				schemaLocation="OIDService.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="newOid">
+		<wsdl:part element="types:newOid" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="newOidResponse">
+		<wsdl:part element="types:newOidResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="newOidByClassValue">
+		<wsdl:part element="types:newOidByClassValue" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="newOidByClassValueResponse">
+		<wsdl:part element="types:newOidResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="exceptionMessage">
+		<wsdl:part name="fault" element="types:exception" />
+	</wsdl:message>
+	<wsdl:message name="getNodeClasses">
+		<wsdl:part element="types:getNodeClasses" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="getNodeClassesResponse">
+		<wsdl:part element="types:getNodeClassesResponse" name="parameters" />
+	</wsdl:message>
+
+	<wsdl:portType name="OIDService">
+		<wsdl:operation name="newOid">
+			<wsdl:documentation>
+				Generoi uuden OID:n juurisolmun ja annetun
+				solmuluokan enumeroidun koodin perusteella
+			</wsdl:documentation>
+			<wsdl:input message="tns:newOid" />
+			<wsdl:output message="tns:newOidResponse" />
+			<wsdl:fault name="exception" message="tns:exceptionMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="newOidByClassValue">
+			<wsdl:documentation>Generoi uuden OID:n juurisolmun ja annetun
+				solmuluokan arvon perusteella
+			</wsdl:documentation>
+			<wsdl:input message="tns:newOidByClassValue" />
+			<wsdl:output message="tns:newOidByClassValueResponse" />
+			<wsdl:fault name="exception" message="tns:exceptionMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="getNodeClasses">
+			<wsdl:documentation>Palauttaa
+				kaikki solmuluokat, joille palvelu voi
+				generoida OID:n
+			</wsdl:documentation>
+			<wsdl:input message="tns:getNodeClasses" />
+			<wsdl:output message="tns:getNodeClassesResponse" />
+			<wsdl:fault name="exception" message="tns:exceptionMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="OIDServiceSoapBinding" type="tns:OIDService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="newOid">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="newOidByClassValue">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getNodeClasses">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="OIDService">
+		<wsdl:port binding="tns:OIDServiceSoapBinding" name="OIDServicePort">
+			<soap:address location="http://localhost:8181/cxf/OIDService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
