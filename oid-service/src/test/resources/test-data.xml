@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<nodeclass id="1" nodeValue="5"
+		description="Teknilliset koodistot, nimikkeistöt ja luokitukset"
+		classCode="TEKN_5" version="0" />
+	<nodeclass id="2" nodeValue="6"
+		description="Teknilliset koodistot, nimikkeistöt ja luokitukset 6"
+		classCode="TEKN_6" version="0" />
+	<nodeclass id="3" nodeValue="10" description="Toimipaikat (ml. organisaatiot)"
+		classCode="TOIMIPAIKAT" version="0" />
+	<nodeclass id="4" nodeValue="11" description="Asiakirjat"
+		classCode="ASIAKIRJAT" version="0" />
+	<nodeclass id="5" nodeValue="12" description="Ohjelmistot"
+		classCode="OHJELMISTOT" version="0" />
+	<nodeclass id="6" nodeValue="13" description="Laitteet"
+		classCode="LAITTEET" version="0" />
+	<nodeclass id="7" nodeValue="14" description="Palvelut"
+		classCode="PALVELUT" version="0" />
+	<nodeclass id="8" nodeValue="16" description="Laskutus (ml. maksusitoumukset)"
+		classCode="LASKUTUS" version="0" />
+	<nodeclass id="9" nodeValue="17"
+		description="Logistiikka (ml. kuljetustunnus)" classCode="LOGISTIIKKA"
+		version="0" />
+	<nodeclass id="10" nodeValue="18"
+		description="Sanomaliikenteen osapuolten tunniste" classCode="SANOMALIIKENNE"
+		version="0" />
+	<nodeclass id="11" nodeValue="19" description="Rekisterinpitäjä"
+		classCode="REKISTERINPITAJA" version="0" />
+	<nodeclass id="12" nodeValue="20" description="Näytetunniste"
+		classCode="NAYTETUNNISTE" version="0" />
+	<nodeclass id="13" nodeValue="22" description="Tilapäinen asiakkaan tunniste"
+		classCode="TILAP_ASIAKAS" version="0" />
+	<nodeclass id="14" nodeValue="24" description="Henkilönumero"
+		classCode="HENKILO" version="0" />
+	<nodeclass id="15" nodeValue="27" description="Roolin yksilöinti"
+		classCode="ROOLI" version="0" />
+
+	<oid_base_data id="1" key="rootNode" value="1.2.246.562"
+		version="0" />
+</dataset>

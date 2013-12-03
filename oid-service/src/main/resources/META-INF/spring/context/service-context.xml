@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+    ">
+
+
+	<context:annotation-config />
+    <aop:aspectj-autoproxy />
+
+	<context:component-scan base-package="fi.vm.sade.oid.generator" />
+
+    <bean id="luhn" class="fi.vm.sade.oid.generator.impl.RandomLuhnOIDGenerator"/>
+    <bean id="ibm" class="fi.vm.sade.oid.generator.impl.RandomIBMCheckOIDGenerator"/>
+
+    <bean id="generators" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="luhn" />
+                <ref bean="ibm" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="oidGeneratorFactory" class="fi.vm.sade.oid.generator.OIDGeneratorFactory">
+        <property name="defaultGenerator">
+            <bean class="fi.vm.sade.oid.generator.impl.RandomLuhnOIDGenerator" />
+        </property>
+        <property name="generators">
+            <ref bean="generators" />
+        </property>
+    </bean>
+
+</beans>

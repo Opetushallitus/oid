@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>fi.vm.sade.generic</groupId>
+		<artifactId>build-parent</artifactId>
+		<version>7.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>fi.vm.sade.oid</groupId>
+	<artifactId>oid</artifactId>
+	<version>8.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>OID :: Parent</name>
+
+    <scm>
+        <connection>scm:git:git@github.com:Opetushallitus/oid.git</connection>
+        <developerConnection>scm:git:git@github.com:Opetushallitus/oid.git</developerConnection>
+        <url>http://github.com/Opetushallitus/oid</url>
+    </scm>
+
+	<modules>
+		<module>oid-api</module>
+		<module>oid-service</module>
+		<module>oid-esb</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-api</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
