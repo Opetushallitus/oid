@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.oid.sade.vm.fi/types"
+	targetNamespace="http://service.oid.sade.vm.fi/types">
+
+	<element name="newOid" type="tns:NewOid" />
+	<element name="newOidByClassValue" type="tns:NewOidByClassValue" />
+	<element name="newOidResponse" type="tns:NewOidResponse" />
+	<element name="exception" type="tns:Exception" />
+	<element name="getNodeClasses" type="tns:GetNodeClasses" />
+	<element name="getNodeClassesResponse" type="tns:GetNodeClassesResponse" />
+
+	<simpleType name="NodeClassCode">
+		<restriction base="string">
+			<enumeration value="TEKN_5" />
+			<enumeration value="TEKN_6" />
+			<enumeration value="TOIMIPAIKAT" />
+			<enumeration value="ASIAKIRJAT" />
+			<enumeration value="OHJELMISTOT" />
+			<enumeration value="LAITTEET" />
+			<enumeration value="PALVELUT" />
+			<enumeration value="LASKUTUS" />
+			<enumeration value="LOGISTIIKKA" />
+			<enumeration value="SANOMALIIKENNE" />
+			<enumeration value="REKISTERINPITAJA" />
+			<enumeration value="NAYTETUNNISTE" />
+			<enumeration value="TILAP_ASIAKAS" />
+			<enumeration value="HENKILO" />
+			<enumeration value="ROOLI" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="NewOid">
+		<sequence>
+			<element name="nodeClass" type="tns:NodeClassCode" />
+		</sequence>
+	</complexType>
+
+	<complexType name="NewOidByClassValue">
+		<sequence>
+			<element name="nodeClassValue" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="NewOidResponse">
+		<sequence>
+			<element name="oid">
+				<simpleType>
+					<restriction base="string">
+						<minLength value="14" />
+						<maxLength value="30" />
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="GetNodeClasses">
+		<sequence />
+	</complexType>
+
+	<complexType name="NodeClassData">
+		<sequence>
+			<element name="nodeValue" type="string" />
+			<element name="description" type="string" />
+			<element name="classCode" type="tns:NodeClassCode" minOccurs="0"
+				maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+	<complexType name="GetNodeClassesResponse">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element type="tns:NodeClassData" name="nodeClassData" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Exception">
+		<sequence>
+			<element name="errorCode" type="string" />
+			<element name="explanation" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+</schema>
