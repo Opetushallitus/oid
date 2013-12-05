@@ -8,9 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
-
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -23,7 +20,6 @@ import javax.ws.rs.core.Response.Status;
  */
 @Component
 @Path("/oid")
-@Api(value = "/oid", description = "OID:n operaatiot")
 public class OidResource {
 	
 	private static final Logger logger = LoggerFactory.getLogger(OidResource.class);
@@ -34,10 +30,6 @@ public class OidResource {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/create")
-    @ApiOperation(
-            value = "Luo uuden oid:n",
-            notes = "Operaatio luo uuden oid:n."
-            + "Parametrit: images=true näyttää kuvat")
     public Response create() {
     	try {
     		return Response.ok(oidService.newOid(NodeClassCode.HENKILO)).build();
