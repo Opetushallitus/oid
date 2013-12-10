@@ -36,8 +36,7 @@ public class OidResource {
     @Path("/create")
     @ApiOperation(
             value = "Luo uuden oid:n",
-            notes = "Operaatio luo uuden oid:n."
-            + "Parametrit: images=true näyttää kuvat")
+            notes = "Operaatio luo uuden oid:n.")
     public Response create() {
     	try {
     		return Response.ok(oidService.newOid(NodeClassCode.HENKILO)).build();
