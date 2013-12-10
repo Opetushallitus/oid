@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>oid</artifactId>
 		<groupId>fi.vm.sade.oid</groupId>
-		<version>7.0</version>
+		<version>8.0</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>oid-service</artifactId>
