@@ -23,6 +23,7 @@
 		<module>oid-api</module>
 		<module>oid-service</module>
 		<module>oid-esb</module>
+		<module>servers</module>
 	</modules>
 
 	<dependencyManagement>
