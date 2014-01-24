@@ -1,14 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<artifactId>oid</artifactId>
-		<groupId>fi.vm.sade.oid</groupId>
-		<version>8.0-SNAPSHOT</version>
-		<relativePath>..</relativePath>
-	</parent>
-	<artifactId>oid-service</artifactId>
-	<name>OID :: Service</name>
-	<packaging>war</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>oid</artifactId>
+        <groupId>fi.vm.sade.oid</groupId>
+        <version>8.0-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>oid-service</artifactId>
+    <name>OID :: Service</name>
+    <packaging>war</packaging>
 
     <properties>
         <deploy.to.server>tomcat</deploy.to.server>
@@ -16,91 +17,256 @@
         <skipDbDiagramGenerate>false</skipDbDiagramGenerate>
     </properties>
 
-	<dependencies>
-		<dependency>
-                <groupId>net.sf.ehcache</groupId>
-                <artifactId>ehcache-core</artifactId>
-                <version>2.5.0</version>
-            </dependency>
-            <dependency>
-                <groupId>net.sf.ehcache</groupId>
-                <artifactId>ehcache-jgroupsreplication</artifactId>
-                <version>1.5</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jgroups</groupId>
-                <artifactId>jgroups</artifactId>
-                <version>2.10.0.GA</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.6.1</version>
-            </dependency>
-            
+    <dependencies>
 
-		<!-- Project dependencies -->
-		<dependency>
-			<groupId>fi.vm.sade.oid</groupId>
-			<artifactId>oid-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>fi.vm.sade.generic</groupId>
-			<artifactId>generic-common</artifactId>
-            <version>7.0-SNAPSHOT</version>
-		</dependency>
+        <!-- Project dependencies -->
         <dependency>
-            <groupId>fi.vm.sade.generic</groupId>
-            <artifactId>dependencies-service</artifactId>
-            <version>7.0-SNAPSHOT</version>
-            <type>pom</type>
+            <groupId>fi.vm.sade.oid</groupId>
+            <artifactId>oid-api</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
-		<dependency>
-			<groupId>fi.vm.sade.generic</groupId>
-			<artifactId>dbunit-support</artifactId>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.flyway</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>fi.vm.sade.generic</groupId>
+            <artifactId>generic-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>fi.vm.sade.generic</groupId>
+            <artifactId>dbunit-support</artifactId>
             <scope>test</scope>
-		</dependency>
+        </dependency>
 
-		<dependency>
-			<groupId>fi.vm.sade.generic</groupId>
-			<artifactId>generic-test-support</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
 
-		<!-- Mockito -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito.version}</version>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-cas</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jasig.cas.client</groupId>
+            <artifactId>cas-client-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+        </dependency>
+
+        <!-- Mockito -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>com.springsource.javax.persistence</artifactId>
+            <version>2.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+        <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
-            <version>2.4.6</version>
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-spring</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-web</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-context</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-jaxrs</artifactId>
+        </dependency>
+
+        <dependency>
+        <groupId>com.wordnik</groupId>
+            <artifactId>swagger-jersey-jaxrs_2.10</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-jgroupsreplication</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jgroups</groupId>
+            <artifactId>jgroups</artifactId>
+        </dependency>
     </dependencies>
 
-	<build>
-		<finalName>oid-service</finalName>
+    <build>
+        <finalName>oid-service</finalName>
 
-		<plugins>
+        <plugins>
             <plugin>
                 <groupId>de.smartics.maven.plugin</groupId>
                 <artifactId>hibernate4-maven-plugin</artifactId>
@@ -132,123 +298,8 @@
                     </dependency>
                 </dependencies>
             </plugin>
-		</plugins>
-	</build>
-
-	<profiles>
-		<profile>
-			<id>import-testdata</id>
-			<activation>
-				<property>
-					<name>import</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>sql-maven-plugin</artifactId>
-						<version>1.5</version>
-						<dependencies>
-							<dependency>
-								<groupId>postgresql</groupId>
-								<artifactId>postgresql</artifactId>
-								<version>${postgresql.version}</version>
-							</dependency>
-						</dependencies>
-						<configuration>
-							<driver>org.postgresql.Driver</driver>
-							<url>jdbc:postgresql:oid</url>
-							<autocommit>true</autocommit>
-							<username>oph</username>
-							<password>oph</password>
-							<onError>continue</onError>
-						</configuration>
-						<executions>
-							<execution>
-								<id>drop-schema</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>execute</goal>
-								</goals>
-								<configuration>
-									<sqlCommand>DROP SCHEMA public CASCADE</sqlCommand>
-									<onError>continue</onError>
-								</configuration>
-							</execution>
-							<execution>
-								<id>create-schema</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>execute</goal>
-								</goals>
-								<configuration>
-									<sqlCommand>CREATE SCHEMA public</sqlCommand>
-								</configuration>
-							</execution>
-							<execution>
-								<id>create-db</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>execute</goal>
-								</goals>
-								<configuration>
-									<srcFiles>
-										<srcFile>target/hibernate3/sql/schema.ddl</srcFile>
-									</srcFiles>
-								</configuration>
-							</execution>
-							<execution>
-								<id>setsequence-db</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>execute</goal>
-								</goals>
-								<configuration>
-									<sqlCommand>SELECT setval('hibernate_sequence', 10000)</sqlCommand>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>dbunit-maven-plugin</artifactId>
-						<version>1.0-beta-3</version>
-						<dependencies>
-							<dependency>
-								<groupId>postgresql</groupId>
-								<artifactId>postgresql</artifactId>
-								<version>${postgresql.version}</version>
-							</dependency>
-						</dependencies>
-						<executions>
-							<execution>
-								<id>import</id>
-								<phase>compile</phase>
-								<goals>
-									<goal>operation</goal>
-								</goals>
-								<configuration>
-									<verbose>true</verbose>
-									<format>flat</format>
-									<schema>public</schema>
-									<driver>org.postgresql.Driver</driver>
-									<src>src/test/resources/test-data.xml</src>
-									<type>INSERT</type>
-									<url>jdbc:postgresql:oid</url>
-									<username>oph</username>
-									<password>oph</password>
-									<transaction>true</transaction>
-									<supportBatchStatement>true</supportBatchStatement>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+        </plugins>
+    </build>
     <pluginRepositories>
         <pluginRepository>
             <id>smartics</id>
