@@ -188,7 +188,7 @@
         </dependency>
 
         <dependency>
-        <groupId>org.hsqldb</groupId>
+            <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <scope>test</scope>
         </dependency>
@@ -245,7 +245,7 @@
         </dependency>
 
         <dependency>
-        <groupId>com.wordnik</groupId>
+            <groupId>com.wordnik</groupId>
             <artifactId>swagger-jersey-jaxrs_2.10</artifactId>
         </dependency>
 
@@ -268,7 +268,7 @@
 
         <plugins>
             <plugin>
-                <groupId>de.smartics.maven.plugin</groupId>
+            <groupId>de.smartics.maven.plugin</groupId>
                 <artifactId>hibernate4-maven-plugin</artifactId>
                 <version>0.1.1</version>
                 <executions>

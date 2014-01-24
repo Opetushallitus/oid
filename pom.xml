@@ -7,8 +7,8 @@
         <version>8.0-SNAPSHOT</version>
     </parent>
 
-	<groupId>fi.vm.sade.oid</groupId>
-	<artifactId>oid</artifactId>
+    <groupId>fi.vm.sade.oid</groupId>
+    <artifactId>oid</artifactId>
 	<version>8.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>OID :: Parent</name>
@@ -52,7 +52,7 @@
     </properties>
 
     <dependencyManagement>
-		<dependencies>
+        <dependencies>
             <dependency>
                 <groupId>postgresql</groupId>
                 <artifactId>postgresql</artifactId>
@@ -66,8 +66,8 @@
             </dependency>
 
             <dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-api</artifactId>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-api</artifactId>
 				<version>${cxf.version}</version>
 			</dependency>
 
