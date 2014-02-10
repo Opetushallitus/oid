@@ -11,6 +11,19 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
+
+           <dependency>
+                <groupId>org.jasig.cas</groupId>
+                <artifactId>cas-client-support-distributed-ehcache</artifactId>
+                <version>3.1.10</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>net.sf.ehcache</groupId>
+                        <artifactId>ehcache</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
 		<!-- Project dependencies -->
 		<dependency>
 			<groupId>fi.vm.sade.oid</groupId>
