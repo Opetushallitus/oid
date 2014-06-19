@@ -57,7 +57,7 @@ ldap.url=ldap://${host.ldap}\:${ldap.port}
 ldap.url.with.base=ldap\://${host.ldap}\:${ldap.port}/dc\=opintopolku,dc\=fi
 log4j.properties.file=${user.home.conf}/log4j.properties
 oid.rest.url.backend=${host.ilb}/oid-service/rest/oid
-oid-service.swagger.basepath=https://${host.virkailija}:${port.oid-service}/oid-service/rest
+oid-service.swagger.basepath=https://${host.virkailija}/oid-service/rest
 oid.webservice.url.backend=${host.ilb}/services/oidService
 root.organisaatio.oid=1.2.246.562.10.00000000001
 user.home.conf=${user.home}/oph-configuration
