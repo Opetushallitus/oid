@@ -20,5 +20,12 @@
 
     <!-- Default set of monitored resources -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    
+
+    <Resource name="jdbc/oid" auth="Container" type="javax.sql.DataSource"
+              maxActive="{{ host_postgresql_oid_maxActive | default(50) }}" 
+              maxIdle="{{ host_postgresql_oid_maxIdle | default(30) }}" 
+              maxWait="{{ host_postgresql_oid_maxWait | default(10000) }}"
+              username="{{ host_postgresql_oid_user }}" password="{{ host_postgresql_oid_password }}" driverClassName="org.postgresql.Driver"
+              url="jdbc:postgresql://{{host_postgresql_oid}}:{{port_postgresql}}/oid"/>
+
 </Context>
