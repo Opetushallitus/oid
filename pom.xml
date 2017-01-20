@@ -29,8 +29,6 @@
 
     <properties>
         <ehcache.version>2.5.0</ehcache.version>
-        <ehcache-jgroupsreplication.version>1.5</ehcache-jgroupsreplication.version>
-        <jgroups.version>2.10.0.GA</jgroups.version>
         <cxf.version>2.5.1</cxf.version>
         <cxf.codegen.version>2.4.6</cxf.codegen.version>
         <aspectj.version>1.6.3</aspectj.version>
@@ -480,21 +478,15 @@
                 <scope>test</scope>
             </dependency>
 
-            <!-- CAS ticket cache replication -->
+            <!-- CAS ticket cache -->
             <dependency>
                 <groupId>net.sf.ehcache</groupId>
                 <artifactId>ehcache-core</artifactId>
                 <version>${ehcache.version}</version>
             </dependency>
             <dependency>
-                <groupId>net.sf.ehcache</groupId>
-                <artifactId>ehcache-jgroupsreplication</artifactId>
-                <version>${ehcache-jgroupsreplication.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jgroups</groupId>
-                <artifactId>jgroups</artifactId>
-                <version>${jgroups.version}</version>
+                <groupId>org.jasig.cas.client</groupId>
+                <artifactId>cas-client-support-distributed-ehcache</artifactId>
             </dependency>
 		</dependencies>
 	</dependencyManagement>
