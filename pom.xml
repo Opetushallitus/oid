@@ -497,7 +497,7 @@
             <url>https://artifactory.opintopolku.fi/artifactory/oph-sade-release-local</url>
           </repository>
           <snapshotRepository>
-            <id>oph-sade-artifactory-snapshots</id>
+            <id>oph-sade-artifactory</id>
             <name>oph-sade-artifactory-snapshots</name>
             <url>https://artifactory.opintopolku.fi/artifactory/oph-sade-snapshot-local</url>
           </snapshotRepository>
