@@ -41,7 +41,7 @@
         <slf4j.version>1.7.5</slf4j.version>
         <javax.persistence.version>2.0.0</javax.persistence.version>
         <javax.validation.version>1.0.0.GA</javax.validation.version>
-        <junit.version>4.10</junit.version>
+        <junit.version>4.13.1</junit.version>
         <hibernate.version>4.1.0.Final</hibernate.version>
         <cas-client-core.version>3.1.12</cas-client-core.version>
         <flyway.version>2.0.2</flyway.version>
