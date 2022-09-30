@@ -29,7 +29,7 @@
 
     <properties>
         <ehcache.version>2.5.0</ehcache.version>
-        <cxf.version>2.5.1</cxf.version>
+        <cxf.version>2.6.0</cxf.version>
         <cxf.codegen.version>2.4.6</cxf.codegen.version>
         <aspectj.version>1.6.3</aspectj.version>
         <generic.version>9.0-SNAPSHOT</generic.version>
