@@ -42,7 +42,7 @@
         <javax.persistence.version>2.0.0</javax.persistence.version>
         <javax.validation.version>1.0.0.GA</javax.validation.version>
         <junit.version>4.10</junit.version>
-        <hibernate.version>4.1.0.Final</hibernate.version>
+        <hibernate.version>5.3.20.Final</hibernate.version>
         <cas-client-core.version>3.1.12</cas-client-core.version>
         <flyway.version>2.0.2</flyway.version>
         <jersey-spring.version>1.9.1</jersey-spring.version>
